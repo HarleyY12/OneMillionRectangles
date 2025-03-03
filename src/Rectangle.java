@@ -11,6 +11,18 @@ public class Rectangle {
         this.xPos = xPos;
         this.yPos = yPos;
     }
+    public int getLength(){
+        return length;
+    }
+    public int getWidth(){
+        return width;
+    }
+    public int getxPos(){
+        return xPos;
+    }
+    public int getyPos(){
+        return yPos;
+    }
 
 
 
