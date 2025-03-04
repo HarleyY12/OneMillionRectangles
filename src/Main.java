@@ -19,12 +19,18 @@ public class Main
                     " X position:" + rectangleArrayList.get(i).getxPos() +
                     " Y position:" + rectangleArrayList.get(i).getyPos());
         }
-        double percentage = 0.0;
         int touchingRectangles = 0;
-        for(int i =0;i<numberOfTotalRectangles;i++){
+        for(Rectangle rectangle : rectangleArrayList){
+            boolean xOverlap = rectangle1.xPos < rectangle.xPos + rectangle.length
+                    &&rectangle.xPos<rectangle1.xPos+rectangle1.length;
+            boolean yOverlap = rectangle1.yPos < rectangle.yPos + rectangle.width
+                    &&rectangle.yPos<rectangle1.yPos+rectangle1.width;
+            if (xOverlap && yOverlap) {
+                touchingRectangles = touchingRectangles + 1;
+            }
         }
-        percentage = (double)(touchingRectangles/numberOfTotalRectangles)*100;
-        System.out.println(percentage);
+        double percentage = (double)touchingRectangles/numberOfTotalRectangles*100;
+        System.out.printf("%.1f%%\n", percentage);
     }
 
 
